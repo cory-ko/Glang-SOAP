@@ -1,4 +1,4 @@
-# G-language SOAP Service
+# G-language SOAP Service (version 1.0.1)
 
 All rights reserved. Copyright © 2012 by OSHITA Kazuki
 
