@@ -1,5 +1,9 @@
+Version 01-Nov-2012
+	Add csv output to 'view_cds' method.
+
 Version 1.0.1 13-Oct-2012
 	Keep up with newest G-language GAE (1.8.13).
 	Some bugs fix.
+
 Version 1.0.0 21-Mar-2009
 	First version.
