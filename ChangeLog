@@ -1,5 +1,10 @@
-Version 01-Nov-2012
+Version 1.0.2-beta
+
+	01-Nov-2012
 	Add csv output to 'view_cds' method.
+
+	21-Nov-2012
+	Delete 'application' option from 'view_cds' method.'
 
 Version 1.0.1 13-Oct-2012
 	Keep up with newest G-language GAE (1.8.13).
