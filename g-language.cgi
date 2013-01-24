@@ -1763,42 +1763,53 @@ sub find_dif{
     return SOAP::Data->type(array=>\@array);
 }
 
-sub cbi{
-    my $self = shift;
-    my $in0 = shift;
+sub cbi {
+    my $self= shift;
+    my $in0=  shift;
 
-    my %param = %{+shift};
+    my %param= %{+shift};
 
-    for ( keys %param ) {
-        if ($param{$_} eq "") {delete $param{$_};}
-        else {$param{"-$_"} = $param{$_};}
+    for (keys %param) {
+        if ($param{$_} eq '') {
+	    delete $param{$_};
+	} else {
+	    $param{"-$_"}= $param{$_};
+	}
     }
 
-    if ( lc($param{"-id"}) eq 'all' ) {
-        $param{"-id"} = "All";
+    if (lc($param{"-id"}) eq 'all') {
+        $param{'-id'} = 'All';
     }
 
-    _set_sdb_path("/tmp/gb");
+    _set_sdb_path('/tmp/gb');
 
-    G::Messenger::msg_interface("Inspire");
+    G::Messenger::msg_interface('Inspire');
     my ($trpData,$trpError);
-    G::Messenger::msg_term_console(sub{$trpData .= shift @_ });
+    G::Messenger::msg_term_console(  sub{$trpData  .= shift @_ });
     G::Messenger::msg_system_console(sub{$trpError .= shift @_ });
 
-    my $jobid = time.substr(rand(10),-4);
-    while (-e "./graph/".$jobid.".png" || -e "./data/".$jobid.".csv") {
-        $jobid = time.substr(rand(10),-4);
+    my $jobid= time.substr(rand(10),-4);
+    while (-e './graph/'.$jobid.'.png' || -e './data/'.$jobid.'.csv') {
+        $jobid= time.substr(rand(10),-4);
     }
 
-    if ( length($in0) > 10 ) {
-        my $tmpfile = ( (time % 1296000)*10 + int(rand(10)) + 1048576);
-        if (substr($in0,0,1) eq ">") {$tmpfile .= ".fasta";}
-        open SEQ,">/tmp/gb/$tmpfile";print SEQ $in0;close SEQ;$in0 = "/tmp/gb/".$tmpfile;
+    if (length($in0) > 10) {
+        my $tmpfile= ((time % 1296000)*10 + int(rand(10)) + 1048576);
+        if (substr($in0, 0, 1) eq '>') {
+	    $tmpfile .= '.fasta';
+	}
+        open  SEQ, ">/tmp/gb/$tmpfile";
+	print SEQ $in0;
+	close SEQ;
+
+	$in0 = '/tmp/gb/'.$tmpfile;
     }
 
-    $in0 = new G::IO($in0,"no msg");
-    require G::Seq::Codon;    my $scaler = G::Seq::Codon::cbi($in0,%param);
+    $in0= new G::IO($in0, 'no msg');
+    require G::Seq::Codon;
+    G::Seq::Codon::cbi($in0, %param, -output=>'f', -filename => "$jobid.csv");
 
+    my $scaler = "http://soap.g-language.org/WS/result.cgi?jobid=$jobid";
     return SOAP::Data->type('string')->value($scaler);
 }
 
