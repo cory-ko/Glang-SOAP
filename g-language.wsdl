@@ -877,13 +877,6 @@
     <part name="result" type="xsd:string" />
   </message>
 
-  <message name="peptide_massRequest">
-    <part name="sequence" type="xsd:string" />
-  </message>
-  <message name="peptide_massResponse">
-    <part name="result" type="xsd:string" />
-  </message>
-
   <message name="mindexRequest">
     <part name="array" type="tns:arrayIn" />
   </message>
@@ -1473,11 +1466,6 @@
     <operation name="max" parameterOrder="array">
       <input  name="maxRequest"  message="tns:maxRequest" />
       <output name="maxResponse" message="tns:maxResponse" />
-    </operation>
-
-    <operation name="peptide_mass" parameterOrder="sequence ">
-      <input  name="peptide_massRequest"  message="tns:peptide_massRequest" />
-      <output name="peptide_massResponse" message="tns:peptide_massResponse" />
     </operation>
 
     <operation name="mindex" parameterOrder="array">
@@ -2212,18 +2200,6 @@
                    use="encoded" namespace="http://soap.g-language.org/GLANG" />
       </input>
       <output name="mindexResponse">
-        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
-                   use="encoded" namespace="http://soap.g-language.org/GLANG" />
-      </output>
-    </operation>
-
-    <operation name="peptide_mass">
-      <soap:operation soapAction="http://soap.g-language.org/GLANG#peptide_mass" />
-      <input name="peptide_massRequest">
-        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
-                   use="encoded" namespace="http://soap.g-language.org/GLANG" />
-      </input>
-      <output name="peptide_massResponse">
         <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
                    use="encoded" namespace="http://soap.g-language.org/GLANG" />
       </output>

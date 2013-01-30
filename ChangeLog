@@ -9,6 +9,10 @@ Version 1.0.2-beta
 	24-Jan-2013
 	Change output style from scalar to file output about 'cbi' method.
 
+	30-Jan-2013
+	Delete 'peptide_mass' method.
+	(This method is discontinued and integrated into molecular_weight).
+
 Version 1.0.1 13-Oct-2012
 	Keep up with newest G-language GAE (1.8.13).
 	Some bugs fix.

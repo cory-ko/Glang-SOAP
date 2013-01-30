@@ -1412,34 +1412,6 @@ sub mindex{
     return SOAP::Data->type('string')->value($scaler);
 }
 
-sub peptide_mass{
-    my $self = shift;
-    my $in0 = shift;
-
-    my %param = %{+shift};
-
-    for ( keys %param ) {
-        if ($param{$_} eq "") {delete $param{$_};}
-        else {$param{"-$_"} = $param{$_};}
-    }
-
-    _set_sdb_path("/tmp/gb");
-
-    G::Messenger::msg_interface("Inspire");
-    my ($trpData,$trpError);
-    G::Messenger::msg_term_console(sub{$trpData .= shift @_ });
-    G::Messenger::msg_system_console(sub{$trpError .= shift @_ });
-
-    my $jobid = time.substr(rand(10),-4);
-    while (-e "./graph/".$jobid.".png" || -e "./data/".$jobid.".csv") {
-        $jobid = time.substr(rand(10),-4);
-    }
-
-    require G::Seq::AminoAcid;    my $scaler = G::Seq::AminoAcid::peptide_mass($in0,%param);
-
-    return SOAP::Data->type('string')->value($scaler);
-}
-
 sub consensus_z {
     my $self = shift;
     my @in0 = @{+shift};
