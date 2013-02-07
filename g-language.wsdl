@@ -52,6 +52,7 @@
       <xsd:complexType name="P2InputParams">
         <xsd:all>
           <xsd:element name="output" type="xsd:string"/>
+          <xsd:element name="tag" type="xsd:string"/>
         </xsd:all>
       </xsd:complexType>
 
@@ -60,6 +61,7 @@
           <xsd:element name="include" type="xsd:string"/>
           <xsd:element name="output" type="xsd:string"/>
           <xsd:element name="exclude" type="xsd:string"/>
+          <xsd:element name="tag" type="xsd:string"/>
         </xsd:all>
       </xsd:complexType>
 
@@ -149,6 +151,7 @@
           <xsd:element name="translate" type="xsd:int"/>
           <xsd:element name="id" type="xsd:string"/>
           <xsd:element name="del_key" type="xsd:string"/>
+          <xsd:element name="tag" type="xsd:string"/>
         </xsd:all>
       </xsd:complexType>
 
@@ -265,6 +268,7 @@
           <xsd:element name="translate" type="xsd:int"/>
           <xsd:element name="output" type="xsd:string"/>
           <xsd:element name="del_key" type="xsd:string"/>
+          <xsd:element name="tag" type="xsd:string"/>
         </xsd:all>
       </xsd:complexType>
 
@@ -296,6 +300,7 @@
           <xsd:element name="translate" type="xsd:int"/>
           <xsd:element name="id" type="xsd:string"/>
           <xsd:element name="del_key" type="xsd:string"/>
+          <xsd:element name="tag" type="xsd:string"/>
         </xsd:all>
       </xsd:complexType>
 
@@ -304,6 +309,7 @@
           <xsd:element name="translate" type="xsd:int"/>
           <xsd:element name="id" type="xsd:string"/>
           <xsd:element name="del_key" type="xsd:string"/>
+          <xsd:element name="tag" type="xsd:string"/>
         </xsd:all>
       </xsd:complexType>
 
@@ -317,6 +323,7 @@
         <xsd:all>
           <xsd:element name="translate" type="xsd:int"/>
           <xsd:element name="output" type="xsd:string"/>
+          <xsd:element name="tag" type="xsd:string"/>
         </xsd:all>
       </xsd:complexType>
 
@@ -326,6 +333,7 @@
           <xsd:element name="position" type="xsd:string"/>
           <xsd:element name="id" type="xsd:string"/>
           <xsd:element name="del_key" type="xsd:string"/>
+          <xsd:element name="tag" type="xsd:string"/>
         </xsd:all>
       </xsd:complexType>
 
@@ -400,6 +408,7 @@
           <xsd:element name="translate" type="xsd:int"/>
           <xsd:element name="output" type="xsd:string"/>
           <xsd:element name="del_key" type="xsd:string"/>
+          <xsd:element name="tag" type="xsd:string"/>
         </xsd:all>
       </xsd:complexType>
 
@@ -477,6 +486,7 @@
           <xsd:element name="output" type="xsd:string"/>
           <xsd:element name="w_filename" type="xsd:string"/>
           <xsd:element name="w_absent" type="xsd:string"/>
+          <xsd:element name="tag" type="xsd:string"/>
         </xsd:all>
       </xsd:complexType>
 
