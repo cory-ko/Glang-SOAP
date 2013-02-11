@@ -16,7 +16,11 @@ Version 1.0.2-beta
 	08-Feb-2013
 	Add 'tag' option to 'cai', 'cbi', 'enc', 'ew', 'fop', 'icdi', 'p2',
 	'phx', 'w_value' and 'scs' methods.
-	This patch is written by celery (github:@celery-kotone).
+	(This patch is written by celery (github:@celery-kotone)).
+
+	11-Feb-2013
+	Fix 'signature' method for file output only.
+	(This patch is written by celery (github:@celery-kotone)).
 
 Version 1.0.1 13-Oct-2012
 	Keep up with newest G-language GAE (1.8.13).
