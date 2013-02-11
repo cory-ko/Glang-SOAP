@@ -2187,13 +2187,7 @@ sub signature{
     $in0 = new G::IO($in0,"no msg");
     my $scaler = "";
     require G::Seq::PatSearch;
-    if ($param{-output} ne "f") {
-        delete $param{-output};
-        $scaler = G::Seq::PatSearch::signature($in0,%param,-output=>"g",-filename=>"$jobid.png");
-    } else {
-        delete $param{-output};
-        $scaler = G::Seq::PatSearch::signature($in0,%param,-output=>"f",-filename=>"$jobid.csv");
-    }
+    $scaler = G::Seq::PatSearch::signature($in0,%param,-output=>"f",-filename=>"$jobid.csv");
 
     $scaler = "http://soap.g-language.org/WS/result.cgi?jobid=$jobid";
     return SOAP::Data->type('string')->value($scaler);
