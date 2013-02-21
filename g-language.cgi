@@ -2105,7 +2105,7 @@ sub genome_map3{
         $jobid = time.substr(rand(10),-4);
     }
 
-    if (length($in0) > 10 ) {
+    if (length($in0) > 10) {
         my $tmpfile = ( (time % 1296000)*10 + int(rand(10)) + 1048576);
         if (substr($in0,0,1) eq ">") {$tmpfile .= ".fasta";}
         open SEQ,">/tmp/gb/$tmpfile";print SEQ $in0;close SEQ;$in0 = "/tmp/gb/".$tmpfile;
