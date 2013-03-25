@@ -834,7 +834,7 @@
 
   <message name="query_strandRequest">
     <part name="sequence" type="xsd:string" />
-    <part name="position" type="xsd:string" />
+    <part name="position" type="xsd:int" />
     <part name="params" type="tns:query_strandInputParams" />
   </message>
   <message name="query_strandResponse">
