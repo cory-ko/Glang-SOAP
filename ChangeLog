@@ -29,6 +29,11 @@ Version 1.0.2-beta
 	[Fix] query_strand Changed type of position to xsd:int.
 	(This patch is written by Hidetoshi Itaya (github:@celery-kotone)).
 
+	17-Jun-2013
+	[Fix] Added option "output" to method "enc".
+	[Fix] Added output format selection to nucleotide_periodicity.
+	(This patch is written by Hidetoshi Itaya (github:@celery-kotone)).
+
 Version 1.0.1 13-Oct-2012
 	Keep up with newest G-language GAE (1.8.13).
 	Some bugs fix.

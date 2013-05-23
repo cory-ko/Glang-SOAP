@@ -322,8 +322,13 @@ sub nucleotide_periodicity {
 
     require G::Seq::PatSearch;
 
-    delete $param{-output};
-    G::Seq::PatSearch::nucleotide_periodicity($in0, %param, -output => "g", -filename => "$jobid.png");
+    if($param{-output} ne "f"){
+        delete $param{-output};
+        G::Seq::PatSearch::nucleotide_periodicity($in0, %param, -output => "g", -filename => "$jobid.png");
+    }else{
+        delete $param{-output};
+        G::Seq::PatSearch::nucleotide_periodicity($in0, %param, -output => "f", -filename => "$jobid.csv");
+    }
 
     my $scaler = "http://soap.g-language.org/WS/result.cgi?jobid=$jobid";
     return SOAP::Data->type('string')->value($scaler);
@@ -594,7 +599,7 @@ sub enc{
     }
 
     $in0 = new G::IO($in0,"no msg");
-    require G::Seq::Codon;    my $scaler = G::Seq::Codon::enc($in0,%param);
+    require G::Seq::Codon;        my $scaler = G::Seq::Codon::enc($in0,%param,-output=>"f",-filename=>"$jobid.csv");
 
     return SOAP::Data->type('string')->value($scaler);
 }
